@@ -1,0 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<c:set var="ctx" value="${pageContext.request.contextPath}" />
+<script type="text/javascript" src="${ctx}/asset/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	var rootPath = "${ctx}";
+	var imgPath = "${imgPath}";
+</script>

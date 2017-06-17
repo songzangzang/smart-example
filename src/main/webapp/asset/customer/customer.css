@@ -1,0 +1,13 @@
+.save{
+    	margin-left: 3px;
+    	border: 1px solid black;
+ }
+ 
+ a {
+ 	text-decoration: none;
+ 	color: black;
+ }
+ 
+ .delete {
+ 	cursor: pointer;
+ }
