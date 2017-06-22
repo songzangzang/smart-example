@@ -3,12 +3,15 @@ package org.smart4j.chapter4.aspect;
 import java.lang.reflect.Method;
 
 import org.apache.log4j.Logger;
+import org.smart4j.framework.annotation.Aspect;
+import org.smart4j.framework.annotation.Controller;
 import org.smart4j.framework.proxy.AspectProxy;
 /**
  * 拦截Controller 所有方法
  * @author Administrator
  *
  */
+@Aspect(Controller.class)
 public class ControllerAspect extends AspectProxy{
 
 	private static final Logger LOGGER = Logger.getLogger(ControllerAspect.class);
