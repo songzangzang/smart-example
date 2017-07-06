@@ -1,6 +1,7 @@
 package org.smart4j.chapter4.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.smart4j.chapter4.model.Customer;
 import org.smart4j.chapter4.service.CustomerService;
@@ -8,8 +9,10 @@ import org.smart4j.framework.annotation.Action;
 import org.smart4j.framework.annotation.Controller;
 import org.smart4j.framework.annotation.Inject;
 import org.smart4j.framework.bean.Data;
+import org.smart4j.framework.bean.FileParam;
 import org.smart4j.framework.bean.Param;
 import org.smart4j.framework.bean.View;
+import org.smart4j.framework.helper.ServletHelper;
 
 /**
  * 用户控制器
@@ -31,7 +34,7 @@ public class CustomerController {
 	 * @throws Exception
 	 */
 	@Action("get:/customer")
-	public View getCustomer(Param param) throws Exception {
+	public View getCustomer() throws Exception {
 		List<Customer> customerList = customerService.getCustomerList();
 		return new View("customer.jsp").addModel("customerList", customerList);
 	}
@@ -44,7 +47,7 @@ public class CustomerController {
 	 * @throws Exception
 	 */
 	@Action("get:/customer_createSubmit")
-	public View createSubmit(Param param) throws Exception {
+	public View createSubmit() throws Exception {
 		return new View("customer_save.jsp");
 	}
 
@@ -53,7 +56,9 @@ public class CustomerController {
 	 */
 	@Action("post:/customer_save")
 	public Data saveCustomer(Param param) throws Exception {
-		boolean result = customerService.saveCustomer(param);
+		Map<String, Object> fieldMap = param.getFieldMap();
+		FileParam fileParam = param.getFile("photo");
+		boolean result = customerService.saveCustomer(fieldMap, fileParam);
 		return new Data(result);
 	}
 

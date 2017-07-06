@@ -20,18 +20,16 @@ public class ControllerAspect extends AspectProxy{
 	
 	@Override
 	public void before(Class<?> cls, Method method, Object[] params) {
-		LOGGER.debug("------- begin ----------");
+		LOGGER.debug("------------------------------- begin ----------------------------------");
 		LOGGER.debug(String.format("class: %s", cls.getName()));
 		LOGGER.debug(String.format("method: %s", method.getName()));
 		begin = System.currentTimeMillis();
-		System.out.println("---------开始时间------------" + begin);
 	}
 	
 	@Override
 	public void after(Class<?> cls, Method method, Object[] params, Object result) {
 		LOGGER.debug(String.format("time:  %dms", System.currentTimeMillis()-begin));
-		LOGGER.debug("--------- end ------------");
-		System.out.println("----------结束时间-----------" + (System.currentTimeMillis()-begin));
+		LOGGER.debug("------------------------------- end ------------------------------------");
 	}
 	
 }

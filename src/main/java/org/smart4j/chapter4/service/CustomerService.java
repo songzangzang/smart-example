@@ -1,8 +1,10 @@
 package org.smart4j.chapter4.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.smart4j.chapter4.model.Customer;
+import org.smart4j.framework.bean.FileParam;
 import org.smart4j.framework.bean.Param;
 
 public interface CustomerService {
@@ -21,7 +23,7 @@ public interface CustomerService {
 	/**
 	 * 添加用户
 	 */
-	public boolean saveCustomer(Param param) throws Exception;
+	public boolean saveCustomer(Map<String, Object> fieldMap, FileParam fileParam) throws Exception;
 	
 	/**
 	 * 修改用户

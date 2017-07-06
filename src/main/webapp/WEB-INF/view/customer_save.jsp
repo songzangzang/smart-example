@@ -19,7 +19,7 @@
 </style>
 <body>
 	<h1>客户添加页面</h1>
-	<form action="" id="ajaxForm">
+	<form action="" id="ajaxForm" entype="multpart/form-data">
 		<table>
 			<tr>
 				<td>名字 : <input type="text" name="name" value=""></td>
